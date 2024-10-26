@@ -1,20 +1,28 @@
-import { expect, test, describe, it } from "vitest"
+import { expect, test, describe } from "vitest"
 
 import { max, fizzBuzz } from "../src/intro"
 
 describe("max", () => {
-    test("returns the digit with max value", () => {
+    test("returns the first argument if it is greater", () => {
         // AAA -> Arrange, Act, Assert
 
         // Arrange
-        const a = 10
+        const a = 30
         const b = 20
 
         // Act
         const result = max(a, b)
 
         // Assert
-        expect(result).toBe(b)
+        expect(result).toBe(a)
+    })
+
+    test("returns the second argument if it is greater", () => {
+        expect(max(5, 10)).toBe(10)
+    })
+
+    test("return the first argument if both the arguments are equal", () => {
+        expect(max(1, 1)).toBe(1)
     })
 })
 
