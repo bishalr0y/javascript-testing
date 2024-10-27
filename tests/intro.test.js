@@ -1,6 +1,6 @@
 import { expect, test, describe } from "vitest"
 
-import { max, fizzBuzz } from "../src/intro"
+import { max, fizzBuzz, factorial } from "../src/intro"
 
 describe("max", () => {
     test("returns the first argument if it is greater", () => {
@@ -41,5 +41,23 @@ describe("fizzBuzz", () => {
 
     test("returns the number itself if it is not divisible by 3 or 5", () => {
         expect(fizzBuzz(91)).toBe("91")
+    })
+})
+
+describe("factorial", () => {
+    test("returns 1 if n is 0", () => {
+        expect(factorial(0)).toBe(1)
+    })
+
+    test("returns 1 if n is 1", () => {
+        expect(factorial(1)).toBe(1)
+    })
+
+    test("returns undefined if n is negative", () => {
+        expect(factorial(-10)).toBe(undefined)
+    })
+
+    test("returns 120 if n is 5", () => {
+        expect(factorial(5)).toBe(120)
     })
 })
